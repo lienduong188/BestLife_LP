@@ -1,0 +1,2 @@
+10/15/22 3:38:55: style.scss - parse error: failed at `$type_images: {` /Applications/MAMP/htdocs/BestLifeLP/wp-content/themes/lightning-child/scss/layout/variable.scss on line 25, at column 1
+10/15/22 4:00:50: style.scss - parse error: failed at `$type_images:` /Applications/MAMP/htdocs/BestLifeLP/wp-content/themes/lightning-child/scss/layout/variable.scss on line 25, at column 1

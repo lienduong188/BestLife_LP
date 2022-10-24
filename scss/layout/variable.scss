@@ -1,0 +1,72 @@
+// ********************************************
+//
+//              変数
+//  
+// ********************************************
+//テーマカラー
+$thema_color: (
+    base: #ffffff,
+    primary: #38b6ff,
+    secondary: #a9e0ff
+);
+
+//contents-flow.phpのグラデーション配列
+$flow_color: (
+    1: #ebf8ff,
+    2: #d7f0ff,
+    3: #c3e9ff,
+    4: #9cdbff,
+    5: #74ccff,
+    6: #4cbdff,
+    7: #38b6ff
+);
+
+//contents-strengths.phpの画像ファイル名変数
+$type_images:
+    type_01_accounting, 
+    type_02_boxing,
+    type_03_bagging,
+    type_04_sticker,
+    type_05_inspection,
+    type_06_leaflet,
+    type_07_document,
+    type_08_sewing,
+    type_09_data,
+    type_10_posting;
+
+
+// ********************************************
+//
+//              ミックスイン
+//  
+// ********************************************
+@mixin flex_column($type){
+    padding: 5px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: $type;
+}
+
+@mixin flex_row($type){
+    padding: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: $type;
+}
+
+@mixin text_layout($t_align, $t_size:16px, $t_color:black, $margin:2px, $padding:2px){
+    text-align: $t_align;
+    color: $t_color;
+    font-size: $t_size;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin background_layout($b_color){
+    background-color: $b_color;
+}
+
+@mixin empty_space($margin:2px, $padding:2px){
+    margin: $margin;
+    padding: $padding;
+}

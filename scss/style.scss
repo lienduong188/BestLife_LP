@@ -1,0 +1,230 @@
+/*
+Theme Name: Lightning Child
+Theme URI: 
+Template: lightning
+Description: 
+Author: 
+Tags: 
+Version: 0.6.0
+*/
+
+// ********************************************
+//
+//            外部ファイル読み込み
+//
+// ********************************************
+@import "layout/variable.scss"; //変数
+@import "layout/cf7.scss"; //Contact Form7
+@import "object/btn.scss"; //ボタン
+
+// ********************************************
+//
+//              コンテンツ
+//
+// ********************************************
+// ********************************************
+// 全体
+// ********************************************
+.main_contents{
+    border: 1px solid #000000; //デバック用
+    margin-bottom: 100px; //デバック用
+}
+
+.section_column{ border: 2px solid #00ff00; margin: 1px;}//デバック用
+.section_row{ border: 3px dotted #990099; margin: 1px;}//デバック用
+
+// ********************************************
+// contents-bestlife.php
+// ********************************************
+.bestlife{
+    .heading01{ @include text_layout(center, 48px, map-get($thema_color, primary));}
+    .section_column{ @include flex_column(center);
+        .heading02{ @include text_layout(center, 36px);}
+        .section_row{ @include flex_row(center);
+            .service_item{
+                border: 3px solid map-get($thema_color, primary);
+
+                .heading03{
+                    @include text_layout(center, 24px, map-get($thema_color, base));
+                    background-color: map-get($thema_color, primary);
+                }
+            }
+            .contact_txt {
+                @include text_layout(center);
+            }
+        }
+    }
+}
+
+// ********************************************
+// contents-flow.php
+// ********************************************
+.flow{
+    .heading01{ @include text_layout(center, 48px, map-get($thema_color, primary));}
+    .section_column{ @include flex_column(center);
+        .heading02{ @include text_layout(center, 36px);}
+        .section_row{ @include flex_row(center);
+            .flow_list{
+                width: 100%;
+                @include empty_space;
+            @each $page, $color in $flow_color {
+                .flow_color_step#{$page}{
+                    @include flex_row(center);
+                    @include background_layout($color);
+                    align-items: center;
+               
+                    div > p{
+                        font-size: 12px;
+                        @include empty_space;
+
+                        span{
+                            font-size: 24px;
+                        }
+                    }
+
+                    div:nth-child(1){
+                        width: 15%;
+                        text-align: center;
+                    }
+                    div:nth-child(2){
+                        width: 15%;
+                    }
+                    div:nth-child(3){
+                        width: 70%;
+                        border-left: 2px solid #000000;
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+
+// ********************************************
+// contents-strengths.php
+// ********************************************
+.strengths{
+    .heading01{ @include text_layout(center, 48px, map-get($thema_color, primary));}
+    .section_column{ @include flex_column(center);
+        .heading02{ @include text_layout(center, 36px);}
+        .section_row{ @include flex_row(center);
+            
+            .strengths_list{
+                padding: 10px 20px;
+                @include flex_row(space-around);
+                
+                li{
+                    @include flex_column(center);
+                    width: 30%;
+                    
+                    div{
+                        width: 100%;
+                        height: 150px;
+                        margin: 5px auto;
+                    }
+                    
+                    .strengths_title{
+                        position: relative;
+                        
+                        p{
+                            position: absolute;
+                            bottom: 25px;
+                            left: 25px;
+                        }
+                    }
+                    .strengths_txt{
+                        background-color: map-get($thema_color, primary);
+                    }
+                }
+            }
+
+            .type_list{
+                width: 100%;
+                @include empty_space;
+                @include flex_row(space-between);
+                list-style: none;
+
+                @each $type in $type_images {
+                    .#{$type}{
+                        text-align: center;
+                        &::before{
+                            display: block;
+                            width: 150px;
+                            height: 150px;
+                            content: url("../../../uploads/#{$type}-150x150.png");
+                        }
+                    }
+                }
+            }
+            .contact_txt {
+                @include text_layout(center);
+            }
+        }
+    }
+}
+
+
+// ********************************************
+//contents-faq.php
+// ********************************************
+.faq{
+    .heading01{ @include text_layout(center, 48px, map-get($thema_color, primary));}
+    .section_column{ @include flex_column(center);
+        .heading02{ @include text_layout(center, 36px);}
+        .section_row{ @include flex_row(center);
+            .faq_list{
+                @include empty_space;
+                list-style: none;
+
+                //問題の箇所
+                width: 70%;
+
+                .question{
+                    border: 2px solid map-get($thema_color, primary);
+                    background-color: map-get($thema_color, secondary);
+
+                    details > summary{
+                        position: relative;
+                        display: block; /* 矢印を消す */
+                        cursor: pointer;
+                        .heading03{
+                            @include text_layout(left, 24px, 10px, 10px);
+                            span{
+                                @include text_layout(center, 36px);
+                                margin-left: 20px;
+                                margin-right: 30px;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+
+                    details > summary::-webkit-details-marker {
+                        display: none;
+                    }
+
+                    details > p {
+                        @include text_layout(left, 16px, #000000, 20px, 20px);
+                        background-color: map-get($thema_color, base);
+                        span{
+                            @include text_layout(center, 36px);
+                            margin-right: 20px;
+                            color: #ff0000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ********************************************
+//contents-about.php
+// ********************************************
+.about{
+    .heading01{ @include text_layout(center, 48px, map-get($thema_color, primary));}
+    .section_column{ @include flex_column(center);
+        .heading02{ @include text_layout(center, 36px);}
+        .section_row{ @include flex_row(center);
+        }
+    }
+}
